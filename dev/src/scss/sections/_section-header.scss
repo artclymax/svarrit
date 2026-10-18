@@ -1,0 +1,74 @@
+@use "../tools" as *;
+.section-header {
+	position: relative;
+	--decor-line: url("../../../public/images/icons/section-header-decor-1.svg");
+	--decor-width: 178px;
+	--decor-top: 8px;
+	@include media($mobile) {
+		--decor-width: 100px;
+		--decor-top: 2px;
+	}
+	&.decor-line-2 {
+		--decor-line: url("../../../public/images/icons/section-header-decor-2.svg");
+		--decor-width: 166px;
+		--decor-top: -6px;
+		@include media($mobile) {
+			--decor-width: 100px;
+			--decor-top: -7px;
+		}
+	}
+
+	&.decor-line-3 {
+		--decor-line: url("../../../public/images/icons/section-header-decor-3.svg");
+		--decor-width: 200px;
+		--decor-top: 4px;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: -48px;
+		height: 220px;
+		width: 1px;
+		background: rgba(225, 195, 64, 0.4);
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: -48px;
+		height: 1px;
+		width: 56px;
+		background: rgba(225, 195, 64, 0.4);
+	}
+	&__label {
+		margin-left: 26px;
+		transform: translateY(-50%);
+		display: inline-flex;
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: var(--decor-top);
+			right: -25px;
+			width: var(--decor-width);
+			height: 18px;
+			transform: translateX(100%);
+			@include bgimg(var(--decor-line), contain, left center);
+		}
+		&:not(:last-child) {
+			margin-bottom: adapt(44, 14);
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(32, 20);
+		}
+	}
+
+	&__descr {
+	}
+}

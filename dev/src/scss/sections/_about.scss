@@ -1,0 +1,67 @@
+@use "../tools" as *;
+
+.about {
+	position: relative;
+	&__container {
+	}
+
+	&__content {
+		@include flex-column;
+		gap: adapt(32, 20);
+		align-items: start;
+		@include media($mobile, min) {
+			max-width: 590px;
+		}
+	}
+
+	&__mobile-image {
+		height: 282px;
+		width: 100%;
+	}
+
+	&__list {
+		@include reset-list;
+		display: flex;
+		flex-wrap: wrap;
+		gap: adapt(24, 12);
+		@include media($mobile) {
+			width: 100%;
+		}
+	}
+
+	&__item {
+	}
+
+	&__btn {
+	}
+
+	&__image {
+		@include image-abs;
+		z-index: -1;
+	}
+}
+
+.about-item {
+	@include cut-border(10px, 9px, 1px, #3d3d3d, var(--color-dark));
+	padding: 16px;
+	display: flex;
+	gap: 12px;
+
+	@include media($mobile) {
+		width: 100%;
+	}
+	&__image {
+	}
+
+	&__content {
+		@include flex-column;
+		gap: 4px;
+	}
+
+	&__title {
+	}
+
+	&__descr {
+		font-size: 12px;
+	}
+}

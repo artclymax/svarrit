@@ -1,0 +1,154 @@
+@use "../tools" as *;
+
+.equipments {
+	&__container {
+		@include flex-column;
+		gap: adapt(64, 32);
+	}
+	.section-header {
+		max-width: 877px;
+
+		&__descr {
+			max-width: 750px;
+		}
+	}
+	&__list {
+		//--min: 384px;
+		gap: adapt(24, 10, $laptop-sm);
+
+		@include media($tablet) {
+			--min: 340px;
+		}
+	}
+
+	&__item {
+	}
+
+	&__cta {
+	}
+}
+
+.equipments-item {
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding: 20px;
+	height: 100%;
+	width: 100%;
+	justify-self: center;
+	@include cut-border(24px, 20px, 1px, #454545, var(--color-gray));
+	overflow: hidden;
+	//box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) inset;
+	&__link-wrapper {
+		@include reset-link;
+		@include flex-column;
+		height: 100%;
+
+		@include hover {
+			.equipments-item__image {
+				transform: scale(1.1);
+			}
+		}
+	}
+	&__image {
+		@include image-abs;
+		width: 50%;
+		left: unset;
+		right: -5%;
+		--object-fit: contain;
+		pointer-events: none;
+		transform: scale(1);
+		transition: all 0.3s;
+		@include media($mobile) {
+			--object-pos: bottom;
+			right: -10%;
+		}
+	}
+	&__content {
+		position: relative;
+		z-index: 2;
+		@include reset-link;
+		@include flex-column;
+		gap: 10px;
+		max-width: 210px;
+		height: 100%;
+
+		@include media($mobile) {
+			max-width: 100%;
+		}
+	}
+
+	&__num {
+		
+	}
+
+	&__title {
+	}
+
+	&__descr {
+		font-size: 14px;
+		flex-grow: 1;
+		@include media($mobile) {
+			max-width: 180px;
+		}
+	}
+
+	&__link {
+	}
+}
+
+.equipments-cta {
+	//background-image: url("../../../public/images/icons/cta-border.svg");
+	background-position: center center; /* x y */
+	background-size: 100%;
+	background-repeat: no-repeat;
+	position: relative;
+	align-items: center;
+	@include cut-border(10px, 10px, 1px, rgba(225, 195, 64, 0.4), var(--color-dark));
+	
+	&__wrapper {
+		position: relative;
+		z-index: 3;
+		padding: adapt(40, 20, $mobile);
+		display: grid;
+		grid-template-columns: 0.7fr 0.8fr 0.5fr;
+		gap: adapt(40, 20, $mobile);
+		align-items: center;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 249px;
+			height: 100%;
+			@include bgimg(var(--cta-image-bg));
+
+			@include media($mobile) {
+				left: unset;
+				right: 0;
+				width: 200px;
+				height: 113px;
+			}
+		}
+	}
+	&__title {
+		font-size: 24px;
+
+		@include media($mobile, min) {
+			justify-self: end;
+			align-self: end;
+			max-width: 270px;
+		}
+	}
+
+	&__descr {
+	}
+
+	&__btn {
+	}
+}

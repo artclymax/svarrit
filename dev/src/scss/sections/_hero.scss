@@ -1,0 +1,170 @@
+@use "../tools" as *;
+
+.hero {
+	position: relative;
+	padding: calc(84px + var(--header-height)) 0 var(--section-padding);
+	@include media($mobile) {
+		padding-bottom: unset;
+	}
+	&__container {
+	}
+
+	&__wrapper {
+		position: relative;
+		padding-top: 62px;
+		padding-left: 34px;
+		padding-bottom: 32px;
+		margin-left: -34px;
+		max-width: 750px;
+		@include media($mobile) {
+			padding-top: 30px;
+			padding-bottom: 1px;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 600px;
+			@include bgimg(url("../../../public/images/icons/hero-wrapper-decor.svg"), contain, left top);
+			pointer-events: none;
+		}
+	}
+
+	&__label {
+		display: inline-flex;
+		transform: translateY(-50%);
+		position: absolute;
+		top: 0;
+		left: 88px;
+		&:not(:last-child) {
+		}
+		@include media($mobile) {
+			left: 60px;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: -26px;
+			transform: translateY(-50%) translateX(100%);
+			width: 186px;
+			height: 54px;
+			@include bgimg(url("../../../public/images/icons/hero-label-decor.svg"));
+			pointer-events: none;
+
+			@include media($mobile) {
+				width: 90px;
+				height: 30px;
+				right: -14px;
+			}
+		}
+	}
+
+	&__title {
+		position: relative;
+		padding-bottom: adapt(34, 22);
+
+		&::after {
+			content: "";
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			width: 78px;
+			height: 2px;
+			background: var(--color-accent);
+		}
+		&:not(:last-child) {
+			margin-bottom: adapt(32, 20);
+		}
+	}
+
+	&__descr {
+		&:not(:last-child) {
+			margin-bottom: adapt(56, 32);
+		}
+		ul {
+			@include reset-list;
+			@include flex-column;
+			gap: adapt(20, 12);
+
+			li {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+
+				&::before {
+					content: "";
+					flex-shrink: 0;
+					@include square(6px);
+					border: 1px solid var(--color-accent);
+					border-radius: 50%;
+				}
+			}
+		}
+	}
+
+	&__btn-box {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px adapt(24, 12, $tablet);
+		&:not(:last-child) {
+			margin-bottom: adapt(56, 32, $tablet);
+			@include media($mobile) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+
+	&__btn {
+	}
+
+	&__image {
+		@include image-abs;
+		z-index: -1;
+	}
+}
+
+.hero-benefits-mobile {
+	@include media($mobile) {
+		padding-top: 16px;
+		padding-bottom: var(--section-padding-05);
+	}
+}
+.hero-benefits {
+	@include reset-list;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 16px;
+	@include media(722) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	@include media(550) {
+		grid-template-columns: 1fr 1fr;
+	}
+	&__item {
+		max-width: 160px;
+		width: 100%;
+		height: 100%;
+		justify-self: center;
+	}
+}
+
+.hero-benefits-item {
+	@include flex-column;
+	gap: 10px;
+	padding: 16px;
+	position: relative;
+	@include bgimg(url("../../../public/images/icons/hero-benefits-item-bg.svg"), contain);
+	&__image {
+		@include square(54px);
+	}
+
+	&__title {
+	}
+
+	&__descr {
+		font-size: 12px;
+	}
+}

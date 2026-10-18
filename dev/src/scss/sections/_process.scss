@@ -1,0 +1,50 @@
+@use "../tools" as *;
+
+.process {
+	&__container {
+		@include flex-column;
+		gap: adapt(64, 20);
+	}
+	.section-header__descr {
+		max-width: 560px;
+	}
+	&__list {
+		--min: 220px;
+		gap: adapt(24, 12);
+	}
+
+	&__item {
+	}
+}
+
+.process-item {
+	display: grid;
+	gap: 10px;
+	padding: 20px;
+	@include cut-border(10px, 9px, 1px, #3d3d3d, var(--color-gray));
+	@include media($mobile) {
+		grid-template-columns: 54px 2fr;
+	}
+	&__num {
+		@include media($mobile) {
+			grid-column: 1 / -1;
+		}
+	}
+
+	&__image {
+		@include square(54px);
+	}
+
+	&__title {
+		@include media($mobile) {
+			align-self: center;
+		}
+	}
+
+	&__descr {
+		font-size: 12px;
+		@include media($mobile) {
+			grid-column: 1 / -1;
+		}
+	}
+}

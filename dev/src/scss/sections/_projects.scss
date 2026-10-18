@@ -1,0 +1,78 @@
+@use "../tools" as *;
+
+.projects {
+	@include flex-column;
+	gap: adapt(64, 32);
+
+	&__container {
+		width: 100%;
+	}
+	.section-header {
+		max-width: 618px;
+	}
+	&__slider-container {
+		width: 100%;
+		--container-width: 1244px;
+	}
+
+	&__slider {
+		position: relative;
+		width: 100%;
+		@include media($mobile, min) {
+			padding-inline: 22px;
+		}
+	}
+}
+
+.projects-swiper {
+	&__wrapper {
+	}
+
+	&__pagination {
+	}
+
+	&__btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		@include media($mobile) {
+			display: none !important;
+		}
+	}
+
+	&__btn-prev {
+		left: 0;
+	}
+
+	&__btn-next {
+		right: 0;
+	}
+}
+
+.projects-slide {
+	width: 282px !important;
+	&__wrapper-link {
+		height: 374px;
+		width: 100%;
+		overflow: hidden;
+
+		img {
+			transform: scale(1.1);
+			transition: all 0.3s;
+		}
+
+		@include hover {
+			img {
+				transform: scale(1);
+			}
+		}
+	}
+}
+
+.swiper-btn {
+	&__prev {
+	}
+
+	&__next {
+	}
+}

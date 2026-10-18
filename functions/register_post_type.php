@@ -1,0 +1,68 @@
+<?php
+add_action('init', function () {
+
+	register_post_type('equipment', [
+		'labels' => [
+			'name' => 'Оборудование',
+			'singular_name' => 'Оборудование',
+			'add_new' => 'Добавить оборудование',
+			'add_new_item' => 'Добавить новое оборудование',
+			'edit_item' => 'Редактировать оборудование',
+			'new_item' => 'Новое оборудование',
+			'view_item' => 'Просмотр оборудования',
+			'search_items' => 'Найти оборудование',
+			'not_found' => 'Оборудование не найдено',
+			'not_found_in_trash' => 'В корзине оборудование не найдено',
+			'all_items' => 'Всё оборудование',
+			'menu_name' => 'Оборудование',
+		],
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'show_in_rest' => true,
+		'query_var' => true,
+		'rewrite' => ['slug' => 'equipment'],
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'menu_position' => 6,
+		'menu_icon' => 'dashicons-admin-tools',
+		'supports' => ['title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes'],
+		'description' => 'Раздел для учета и описания оборудования компании',
+	]);
+
+	register_post_type('document', [
+		'labels' => [
+			'name' => 'Документы',
+			'singular_name' => 'Документ',
+			'add_new' => 'Добавить документ',
+			'add_new_item' => 'Добавить новый документ',
+			'edit_item' => 'Редактировать документ',
+			'new_item' => 'Новый документ',
+			'view_item' => 'Просмотр документа',
+			'search_items' => 'Найти документы',
+			'not_found' => 'Документы не найдены',
+			'not_found_in_trash' => 'В корзине документы не найдены',
+			'all_items' => 'Все документы',
+			'menu_name' => 'Документы',
+		],
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'show_in_rest' => true,
+		'query_var' => true,
+		'rewrite' => ['slug' => 'document'],
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'menu_position' => 5,
+		'menu_icon' => 'dashicons-media-document',
+		'supports' => ['title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes'],
+		'description' => 'Раздел для публикации официальных документов компании',
+	]);
+
+});

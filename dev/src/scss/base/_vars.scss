@@ -1,0 +1,41 @@
+@use "../tools" as *;
+
+:root {
+	--color-0: rgba(0, 0, 0, 0);
+	--color-black: #000;
+	--color-white: #fff;
+
+	// ===== Colors ======
+	--color-light: #f6f6f6;
+	--color-dark: #161717;
+	--color-dark-06: #{rgba(#161717, 0.6)};
+	--color-gray: #2b2b2b;
+	--color-gray-text: #bfbfbf;
+	--color-gray-text-2: #6f6f6f;
+	--color-accent: #e1c340;
+	--color-accent-hover: #f1d845;
+
+	// ===== Layouts =====
+	--form-height: 486px;
+	--header-height: 107px;
+
+	@include media($tablet) {
+		--header-height: 80px;
+	}
+
+	--section-padding: #{adapt(120, 64)};
+	--section-padding-05: #{adapt(60, 32)};
+
+	--container-width: 1200px;
+	--container-padding: 10px;
+
+	// ===== Fonts =====
+	--font-size-html: 100%;
+	--font-size: 16px;
+
+	--font-family-main: "Inter-VF", "Inter", sans-serif;
+	--font-family-title: "Oswald-VF", "Oswald", sans-serif;
+
+	--line-height: 120%;
+	--letter-spacing: normal;
+}

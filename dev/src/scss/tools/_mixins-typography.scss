@@ -1,0 +1,183 @@
+@use "functions" as *;
+@use "mixins" as *;
+@use "constants" as *;
+
+@mixin title-1 {
+	@include reset;
+	font-family: var(--font-family-title);
+	font-weight: 500;
+	font-size: adapt(52, 38);
+	line-height: 120%;
+	text-transform: uppercase;
+}
+
+@mixin title-2 {
+	@include reset;
+	font-family: var(--font-family-title);
+	font-weight: 500;
+	font-size: adapt(44, 24);
+	line-height: 120%;
+	text-transform: uppercase;
+}
+
+@mixin title-3 {
+	@include reset;
+	font-family: var(--font-family-title);
+	font-weight: 500;
+	font-size: 26px;
+	line-height: 120%;
+	text-transform: uppercase;
+}
+
+@mixin title-4 {
+	@include reset;
+	font-family: var(--font-family-title);
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 120%;
+	text-transform: uppercase;
+}
+
+@mixin label {
+	@include reset;
+	font-family: var(--font-family-title);
+	font-weight: 400;
+	font-size: adapt(14, 12);
+	line-height: 120%;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	color: var(--color-accent);
+}
+// =====================
+@mixin title-5 {
+	@include reset;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 145%;
+}
+
+@mixin body-l {
+	@include reset;
+	font-weight: 400;
+	font-size: adapt(18, 16);
+}
+
+@mixin body-m {
+	@include reset;
+	font-weight: 400;
+	font-size: adapt(16, 15);
+}
+
+@mixin body-s {
+	@include reset;
+	font-weight: 400;
+	font-size: 14px;
+}
+
+@mixin button-l {
+	@include reset;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 150%;
+}
+
+@mixin button-m {
+	@include reset;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 150%;
+}
+
+@mixin button {
+	@include button-m;
+}
+
+@mixin input-text {
+	@include reset;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 150%;
+}
+
+@mixin helper-text {
+	@include reset;
+	font-weight: 400;
+	font-size: adapt(13, 12);
+	line-height: 140%;
+}
+
+@mixin caption {
+	@include reset;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 130%;
+}
+
+@mixin overline {
+	@include reset;
+	font-weight: 600;
+	font-size: adapt(12, 11);
+	line-height: 130%;
+	letter-spacing: 8%;
+	text-transform: uppercase;
+}
+
+@mixin metric {
+	@include reset;
+	font-family: var(--font-family-title);
+	font-weight: 700;
+	font-size: 28px;
+	line-height: 120%;
+}
+
+@mixin metric-l {
+	@include reset;
+	font-family: var(--font-family-title);
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 120%;
+}
+
+@mixin metric-m {
+	@include reset;
+	font-family: var(--font-family-title);
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 120%;
+}
+
+@mixin display-xl {
+	@include reset;
+	font-family: var(--font-family-title);
+	font-weight: 700;
+	font-size: 56px;
+	line-height: 115%;
+	letter-spacing: -1.2%;
+}
+
+@mixin display-l {
+	@include reset;
+	font-family: var(--font-family-title);
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 115%;
+	letter-spacing: -1%;
+}
+
+@mixin display-m {
+	@include reset;
+	font-family: var(--font-family-title);
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 115%;
+	letter-spacing: -1%;
+}
+
+@mixin display-s {
+	@include reset;
+	font-family: var(--font-family-title);
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 115%;
+	letter-spacing: -0.8%;
+}

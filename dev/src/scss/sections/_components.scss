@@ -1,0 +1,47 @@
+@use "../tools" as *;
+.box-decor {
+	--bxd-top: calc(-1 * #{adapt(64, 32)});
+	position: relative;
+
+	@include media($mobile, min) {
+		&::before {
+			content: "";
+			position: absolute;
+			top: var(--bxd-top);
+			right: -59px;
+			width: 462px;
+			height: 1px;
+			background-color: #675c28;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: var(--bxd-top);
+			right: -59px;
+			width: 1px;
+			height: 396px;
+			background-color: #675c28;
+		}
+	}
+}
+.num {
+	font-family: var(--font-family-title);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 120%;
+	text-transform: uppercase;
+	color: var(--color-accent);
+	display: flex;
+	align-items: flex-end;
+	gap: 8px;
+
+	&::after {
+		content: "";
+		flex-shrink: 0;
+		width: 14px;
+		height: 1px;
+		background: var(--color-accent);
+		margin-bottom: 2px;
+	}
+}

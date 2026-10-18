@@ -1,0 +1,140 @@
+@use "../tools" as *;
+
+.metalwork {
+	&__container {
+		@include flex-column;
+		gap: adapt(64, 32);
+	}
+	.section-header {
+		max-width: 588px;
+	}
+	&__list {
+		--min: 580px;
+		gap: adapt(24, 12);
+		@include media($tablet) {
+			--min: 340px;
+		}
+	}
+
+	&__item {
+	}
+}
+
+.metalwork-item {
+	&__link-wrapper {
+		@include cut-border(24px, 20px, 1px, #454545, var(--color-dark));
+		@include reset-link;
+		position: relative;
+		@include flex-column;
+		overflow: hidden;
+		padding: adapt(30, 20);
+		height: 100%;
+
+		&::after {
+			content: "";
+			background: linear-gradient(
+				270deg,
+				rgba(22, 23, 23, 0.1) 0%,
+				rgba(22, 23, 23, 0.8) 24.5%,
+				#161717 46.77%,
+				#161717 100%
+			);
+			position: absolute;
+			width: 50%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			pointer-events: none;
+			transition: all 0.3s;
+			@include media($mobile) {
+				background: var(--color-dark-06);
+				width: 100%;
+			}
+		}
+
+		@include hover {
+			.metalwork-item__image {
+				width: calc(90% - 2px);
+
+				@include media($mobile) {
+					width: calc(100% - 2px);
+				}
+			}
+
+			@include media($mobile) {
+			&::after {
+				opacity: 0.6;
+				transition: all 0.3s;
+			}
+			}
+		}
+	}
+
+	&__image {
+		$chamfer-x: 24px;
+		$chamfer-y: 20px;
+		@include image-abs;
+		width: calc(100% - 2px);
+		height: calc(100% - 2px);
+		top: 1px;
+		left: unset;
+		right: 1px;
+		//transform: translate(-50%, -50%);
+		clip-path: polygon(
+			#{$chamfer-x} 0,
+			calc(100% - #{$chamfer-x}) 0,
+			100% #{$chamfer-y},
+			100% calc(100% - #{$chamfer-y}),
+			calc(100% - #{$chamfer-x}) 100%,
+			#{$chamfer-x} 100%,
+			0 calc(100% - #{$chamfer-y}),
+			0 #{$chamfer-y}
+		);
+		z-index: 1;
+		pointer-events: none;
+		transition: all 0.3s;
+	}
+
+	&__content {
+		@include flex-column;
+		max-width: 246px;
+		height: 100%;
+
+		@include media($mobile) {
+			max-width: 100%;
+		}
+	}
+
+	&__icon {
+		@include square(54px);
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+
+	&__descr {
+		font-size: 14px;
+		flex-grow: 1;
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__link {
+	}
+}
+.image-box {
+}
+.title-4 {
+}
+.descr {
+}
+.link-arrow {
+}

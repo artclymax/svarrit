@@ -1,0 +1,39 @@
+@use "../tools" as *;
+
+.contacts-box-list {
+	@include reset-list;
+	@include flex-column;
+	gap: 12px;
+	.icon {
+		--width: 24px;
+	}
+	&__item {
+	}
+
+	&__sublist {
+		@include reset-list;
+		@include flex-column;
+		gap: 8px;
+	}
+
+	&__subitem {
+	}
+
+	&__link {
+	}
+
+	&__descr {
+		font-style: normal;
+	}
+}
+
+.icon--phone {
+}
+.icon--email {
+}
+.icon--address {
+}
+.descr {
+}
+.icon--time {
+}
